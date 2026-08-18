@@ -2,14 +2,14 @@
 
 A small, dependency-light C command-line tool for AES-256-CBC file encryption and
 decryption, built to be byte-compatible with OpenSSL's `enc` command. This was built as
-a correctness testbed — to validate key derivation, salt handling, and block-cipher
-processing in isolation — before that same logic was integrated into a larger project
+a correctness testbed, to validate key derivation, salt handling, and block-cipher
+processing in isolation, before that same logic was integrated into a larger project
 (see [../README.md](../README.md) for the s3fs-fuse encrypted-filesystem project this
 supports).
 
 ## Why a standalone tool first
 
-Debugging cryptographic logic inside a large, multi-threaded FUSE filesystem is painful —
+Debugging cryptographic logic inside a large, multi-threaded FUSE filesystem is painful;
 failures show up as corrupted files with no clear signal of whether the bug is in the
 crypto, the buffering, or the upload pipeline itself. Building this tool first made it
 possible to verify the key derivation and encrypt/decrypt round-trip against real OpenSSL
@@ -100,4 +100,4 @@ Testing summary (salt and no-salt, encrypt and decrypt) — all passed:
 
 ## License
 
-MIT (or update to match your preferred license).
+MIT
